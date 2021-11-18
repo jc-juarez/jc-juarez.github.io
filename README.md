@@ -1,1 +1,0 @@
-# jc-juarez.github.io
