@@ -1,0 +1,215 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #fff; /* White background */
+}
+
+.header {
+    color: #333; /* Dark gray text for better readability */
+    background: #fff; /* White background for the header */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* For absolute positioning of shapes */
+}
+
+.text-container {
+    max-width: 600px;
+    z-index: 10; /* Above the shapes */
+    position: relative; /* Ensure text is over the shapes */
+}
+
+.greeting {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.name {
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #555; /* Slightly lighter gray */
+}
+
+.description {
+    font-size: 1rem;
+    margin-top: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666; /* Even lighter gray */
+}
+
+.social-links {
+    margin-top: 25px;
+}
+
+.social-links i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #333;
+}
+
+/* Abstract shapes using pseudo-elements */
+.header::before,
+.header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.header::before {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff; /* Bootstrap primary blue */
+    left: 55%;
+    z-index: 1;
+}
+
+.header::after {
+    width: 300px;
+    height: 300px;
+    background-color: #ff7f00; /* Orange tone */
+    right: 25%;
+    z-index: 1;
+}
+
+/* Additional abstract shapes */
+.shape1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #17a2b8; /* Bootstrap info blue */
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.shape2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ffc107; /* Bootstrap yellow */
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* Ensure the content is above the shapes */
+.text-container,
+.social-links i {
+    position: relative;
+    z-index: 5;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .header::before,
+    .header::after,
+    .shape1,
+    .shape2 {
+        display: none; /* Hide shapes on smaller screens */
+    }
+}
+
+/* ... Other styles remain unchanged ... */
+
+/* Complex abstract shapes with clip-path */
+.header::before,
+.header::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    z-index: 1;
+}
+
+.header::before {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff; /* Bootstrap primary blue */
+    right: 35%;
+    top: 30%;
+    transform: translate(50%, -50%);
+}
+
+.header::after {
+    width: 300px;
+    height: 300px;
+    background-color: #ff7f00; /* Orange tone */
+    right: 20%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+/* Additional complex shapes */
+.shape1 {
+    width: 100px;
+    height: 100px;
+    background-color: #17a2b8; /* Bootstrap info blue */
+    position: absolute;
+    right: 40%;
+    top: 20%;
+    clip-path: ellipse(50% 40% at 50% 50%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 0;
+}
+
+.shape2 {
+    width: 150px;
+    height: 150px;
+    background-color: #ffc107; /* Bootstrap yellow */
+    position: absolute;
+    right: 10%;
+    top: 70%;
+    clip-path: ellipse(60% 40% at 50% 50%);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    z-index: 0;
+}
+
+/* Adjusting the z-index for text to make sure it's on top */
+.text-container {
+    position: relative;
+    z-index: 5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .header::before,
+    .header::after,
+    .shape1,
+    .shape2 {
+        display: none; /* Hide shapes on smaller screens */
+    }
+}
+
